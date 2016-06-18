@@ -124,6 +124,15 @@ function clearLines(){
         break;
       }
     }
+    //そろったブロックの上のブロックを一段落とす
+    if (rowFilled){
+      for (var yy = y;yy > 0;--yy){
+        for (var x = 0;x < cols ; ++x){
+          board[yy][x] = board[yy - 1][x];
+        }
+      }
+      ++y ;//一段落したのでチェック処理を一段下に送る
+    }
   }
 }
 
