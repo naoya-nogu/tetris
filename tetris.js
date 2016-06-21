@@ -21,7 +21,7 @@ var shapes = [　//今操作しているブロックの種類
     ] 
 //ブロックの色の種類
 var colors = [
-"green", "red", "yellow", "aqua", "orange", "blue", "purple"
+  "green", "red", "yellow", "aqua", "orange", "blue", "purple"
 ];
 
 function vanish(){ //盤面を空にする 
@@ -62,7 +62,7 @@ function tick(){
     freeze();//操作していたブロックを固定する
     clearLines(); //一列そろったところを消す
     if ( lose ){
-      newgame();//またゲームをスタート
+      newGame();//またゲームをスタート
       return false;
     }
     newShape();
@@ -105,7 +105,7 @@ function clearLines(){
     //そろったブロックの上のブロックを一段落とす
     if (rowFilled){
       for (var yy = y;yy > 0;--yy){
-        for (var x = 0;x < cols ; ++x){
+        for (var x = 0;x < COLS ; ++x){
           board[ yy ][ x ] = board[ yy - 1 ][ x ];
         }
       }
