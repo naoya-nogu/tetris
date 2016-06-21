@@ -152,8 +152,8 @@ function valid (offsetX,offsetY,newCurrent){
   for (var y = 0;y < 4 ; ++y ){
     for(var x = 0;x < 4; ++x){
       if (newCurrent[ y ][ x ]){
-        if (typeof board[ y + offsetY ] == 'underfined'
-          || typeof board[ y + offsetY ][ x + offsetX ] == 'underfined'
+        if (typeof board[ y + offsetY ] == 'undefined'
+          || typeof board[ y + offsetY ][ x + offsetX ] == 'undefined'
           || board[ y + offsetY ][ x + offsetX ]
           || x + offsetX < 0
           || y + offsetY >= ROWS
