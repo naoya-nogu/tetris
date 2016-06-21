@@ -20,7 +20,9 @@ var shapes = [　//今操作しているブロックの種類
      0,1],
     ] 
 //ブロックの色の種類
-var colors = ["green","red","yellow","aqua","orange","blue","purples"]
+var colors = [
+"green", "red", "yellow", "aqua", "orange", "blue", "purple"
+];
 
 function vanish(){ //盤面を空にする 
   for ( var y = 0; y < ROWS; ++y ) {
@@ -39,7 +41,7 @@ function newShape(){
     current [ y ] = [];
     for (var x = 0 ;x < 4 ;++x){
       var i = 4 * y + x ;
-      if ( typeof shape[ i ] != 'underfined' && shape[ i ]){ //shapeが未定義じゃないことを表している
+      if ( typeof shape[ i ] != 'undefined' && shape[ i ]){ //shapeが未定義じゃないことを表している
         current [ y ][ x ] = id + 1;
       }
       else{
@@ -63,7 +65,7 @@ function tick(){
       newgame();//またゲームをスタート
       return false;
     }
-    newshape();
+    newShape();
   }
 }
 
