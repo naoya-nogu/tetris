@@ -2,16 +2,14 @@
 var canvas = document.getElementsByTagName('canvas')[0]; //キャンバスを共有
 var ctx = canvas.getContext( '2d' ); // コンテクスト
 var W = 300, H = 600;  // キャンバスのサイズ
-var BLOCK_W = W / cols, BLOCK_H = H / rows;  // マスの幅を設定
+var BLOCK_W = W / COLS, BLOCK_H = H / ROWS;  // マスの幅を設定
 
 // 盤面と操作ブロックを描画する
 function render() {
   ctx.clearRect( 0, 0, W, H );  // 一度キャンバスを真っさらにする
-  ctx.strokeStyle = 'black';  // えんぴつの色を黒にする
-
-  // 盤面を描画する
-  for ( var x = 0; x < cols; ++x ) {
-    for ( var y = 0; y < rows; ++y ) {
+  ctx.strokeStyle = 'black';  // えんぴつの色を黒COLSにすROWS // 盤面を描画する
+  for ( var x = 0; x < COLS; ++x ) {
+    for ( var y = 0; y < ROWS; ++y ) {
       if ( board[ y ][ x ] ) {  // マスが空、つまり0ではなかったら
         ctx.fillStyle = colors[ board[ y ][ x ] - 1 ];  // マスの種類に合わせて塗りつぶす色を設定
         drawBlock( x, y );  // マスを描画
