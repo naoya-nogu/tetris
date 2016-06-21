@@ -132,7 +132,7 @@ function keyPress(key){
       break;
     case 'rotate':
       //操作ブロックを回す
-      var rotate = rotate( current );
+      var rotated = rotate( current );
       if ( valid( 0, 0,rotated ) ){
         current = rotated;//回した後の状態に操作ブロックをセットする
       }
